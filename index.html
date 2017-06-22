@@ -1,0 +1,131 @@
+<html>
+<head>
+  <title>My Cat Album</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Arizonia" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Sunshiney" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/home/riu/Downloads/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        body{
+            position: relative;
+            overflow-y: hidden;
+        }
+        h4{
+            font-family: Sacramento;
+            font-weight: bolder;
+            margin-left: 4vw;
+            font-size-adjust: 0.58;
+            font-size: 2vw;
+        }
+        #photo{
+            position: absolute;
+            right:10vw;
+            top: 10vh;
+            border-left: 5px solid magenta;
+            border-right: 5px solid magenta;
+            z-index: 90;
+        }
+        #con img:hover{
+        	cursor: pointer;
+        }
+        #photo h3{
+            font-family: Arizonia;
+            font-weight: bold;
+            font-size-adjust: 0.58;
+            font-size: 2.5vw;
+            border-bottom: 12px solid yellow;
+        }
+        #con{
+        	overflow-y: scroll;
+        	height: 100%;
+        	width: 20%;
+        	background-color: #fc0;
+        }
+        #con img{
+        	border-top: 15px solid chartreuse;
+        }
+        h2{
+        	font-family: Great Vibes;
+        	font-weight: bolder;
+        	font-size: 5vw;
+        	color: red;
+        	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+        	transform: rotateY(-20deg) rotateX(20deg) rotateZ(-15deg);
+        	text-decoration: underline ;
+        	z-index: 9999 !important;
+        }
+        .col-xs-6{
+        	perspective: 400px;
+  			perspective-origin: 0px 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-xs-2" id="con">
+    		
+    	</div>
+    	<div class="col-xs-6">
+    		<h2>My  Cat  album!</h2>
+    	</div>
+    	<div class="col-xs-4">
+    
+    	</div>
+        <div id="photo">
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    //document.body.innerHTML = '';
+document.body.style.background="khaki";
+
+var images = ["https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426","https://cdn.pixabay.com/photo/2016/11/24/12/55/kitten-1856134__340.jpg","https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496","https://cdn.pixabay.com/photo/2016/09/05/21/37/cat-1647775__340.jpg","https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg","https://cdn.pixabay.com/photo/2013/12/12/03/08/kitten-227009__340.jpg","https://cdn.pixabay.com/photo/2014/05/07/06/44/animal-339400__340.jpg","https://cdn.pixabay.com/photo/2013/05/17/15/54/cat-111793__340.jpg","https://cdn.pixabay.com/photo/2016/08/10/02/55/kitten-1582384__340.jpg","https://cdn.pixabay.com/photo/2017/04/10/18/59/cat-2219446__340.jpg"];
+var names=["Bayla","Chew","Rusha","Latte","Mou","Rui","Pully","Tuk-tuk","Snowy","Tia"];
+
+for (var i = 0; i < images.length; i++) {
+
+    var image = images[i];
+    var name = names[i];
+    var elem = document.createElement('IMG');
+    $('#con').append(elem);
+    elem.setAttribute("src", image);
+    elem.setAttribute("width", "100%");
+    elem.setAttribute("height", "auto");
+
+    var para=document.createElement('h4');
+    para.textContent=name;
+    $('#con').append(para);
+
+    elem.addEventListener('click',( function(imageCopy,nameCopy) {
+        return function(){
+            document.getElementById('photo').innerHTML="<img src=\""+imageCopy+"\">";
+            var title=document.createElement('h3');
+            title.textContent=nameCopy;
+            document.getElementById('photo').appendChild(title);
+        }
+        
+    })(image,name));
+}
+</script>
+</html>
